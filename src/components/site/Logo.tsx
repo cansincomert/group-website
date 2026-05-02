@@ -5,15 +5,11 @@ export const Logo = ({ className = "" }: { className?: string }) => (
     
     {/* Sadece görsel kullanmak istersen bu img etiketini tut */}
     <img 
-      src="/logo.svg" /* veya logo.png */ 
+      src="/logo.png" 
       alt="Site Logo" 
-      className="h-8 w-auto object-contain" /* h-8 boyutu belirler, logona göre h-10 veya h-12 yapabilirsin */
+      className="h-12 w-auto object-contain" /* h-8 boyutu belirler, logona göre h-10 veya h-12 yapabilirsin */
     />
-
-    {/* Görselin yanına metin de eklemek istersen alt kısmı kullanabilirsin, istemezsen silebilirsin */}
-    <span className="font-display text-lg font-semibold tracking-tight">
-      MarkaAdı<span className="text-primary">.</span>
-    </span>
-
+    
+    
   </Link>
 );

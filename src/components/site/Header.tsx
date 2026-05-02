@@ -18,7 +18,7 @@ export const Header = () => {
   const loc = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#011140]/95 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         <Logo />
         <nav className="hidden items-center gap-1 lg:flex">
@@ -28,7 +28,7 @@ export const Header = () => {
                 to={item.to}
                 className={({ isActive }) =>
                   `inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm transition-colors ${
-                    isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                    isActive ? "text-white font-medium" : "text-slate-300 hover:text-white"
                   }`
                 }
               >
@@ -37,17 +37,17 @@ export const Header = () => {
               </NavLink>
               {item.hasMenu && (
                 <div className="invisible absolute left-1/2 top-full w-[520px] -translate-x-1/2 pt-2 opacity-0 transition group-hover:visible group-hover:opacity-100">
-                  <div className="grid grid-cols-2 gap-1 rounded-xl border border-border bg-popover p-2 shadow-card">
+                  <div className="grid grid-cols-2 gap-1 rounded-xl border border-white/10 bg-[#011140] p-2 shadow-xl">
                     {units.map((u) => (
                       <Link
                         key={u.slug}
                         to={`/units/${u.slug}`}
-                        className="flex items-start gap-3 rounded-lg p-3 hover:bg-muted"
+                        className="flex items-start gap-3 rounded-lg p-3 hover:bg-white/10 transition-colors"
                       >
-                        <u.icon className="mt-0.5 h-4 w-4 text-primary" />
+                        <u.icon className="mt-0.5 h-4 w-4 text-sky-400" />
                         <div>
-                          <div className="text-sm font-medium">{u.name}</div>
-                          <div className="text-xs text-muted-foreground">{u.tagline}</div>
+                          <div className="text-sm font-medium text-white">{u.name}</div>
+                          <div className="text-xs text-slate-400">{u.tagline}</div>
                         </div>
                       </Link>
                     ))}
@@ -58,40 +58,45 @@ export const Header = () => {
           ))}
         </nav>
         <div className="hidden lg:block">
-          <Button asChild variant="default" size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
+          {/* Butonu daha uyumlu bir outline tarzına çevirdik */}
+          <Button asChild size="sm" className="bg-transparent text-white border border-white/30 hover:bg-white hover:text-[#011140] transition-colors">
             <Link to="/contact">Contact</Link>
           </Button>
         </div>
+        
+        {/* Mobil Menü İkonu */}
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
+      
+      {/* Mobil Menü İçeriği */}
       {open && (
-        <div className="border-t border-border bg-background lg:hidden">
+        <div className="border-t border-white/10 bg-[#011140] lg:hidden">
           <div className="container flex flex-col py-3">
             {nav.map((i) => (
               <Link
                 key={i.to}
                 to={i.to}
                 onClick={() => setOpen(false)}
-                className={`rounded-md px-3 py-2 text-sm ${
-                  loc.pathname === i.to ? "bg-muted text-foreground" : "text-muted-foreground"
+                className={`rounded-md px-3 py-2 text-sm transition-colors ${
+                  loc.pathname === i.to ? "bg-white/10 text-white" : "text-slate-300 hover:text-white"
                 }`}
               >
                 {i.label}
               </Link>
             ))}
-            <div className="mt-2 grid grid-cols-2 gap-1 rounded-lg border border-border p-2">
+            <div className="mt-2 grid grid-cols-2 gap-1 rounded-lg border border-white/10 p-2">
               {units.map((u) => (
                 <Link
                   key={u.slug}
                   to={`/units/${u.slug}`}
                   onClick={() => setOpen(false)}
-                  className="rounded-md p-2 text-xs text-muted-foreground hover:bg-muted"
+                  className="rounded-md p-2 text-xs text-slate-400 hover:bg-white/10 hover:text-white transition-colors"
                 >
                   {u.short}
                 </Link>
