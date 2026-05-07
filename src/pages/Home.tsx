@@ -10,7 +10,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PartnerStrip } from "@/components/site/PartnerStrip";
+import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 import { SectionHeader, Eyebrow } from "@/components/site/SectionHeader";
 import { solutions } from "@/data/solutions";
 import { products } from "@/data/products";
@@ -97,7 +97,7 @@ const Home = () => {
         </div>
       </section>
 
-      <PartnerStrip />
+      <PartnerMarquee />
 
       {/* STATS */}
       <section className="container py-16 md:py-20">
