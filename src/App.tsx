@@ -11,8 +11,12 @@ import Mission from "./pages/Mission";
 import Industries from "./pages/Industries";
 import Insights from "./pages/Insights";
 import Contact from "./pages/Contact";
-import UnitsOverview from "./pages/units/UnitsOverview";
-import UnitDetail from "./pages/units/UnitDetail";
+import SolutionsOverview from "./pages/solutions/SolutionsOverview";
+import SolutionDetail from "./pages/solutions/SolutionDetail";
+import ProductsOverview from "./pages/products/ProductsOverview";
+import ProductDetail from "./pages/products/ProductDetail";
+import PartnersOverview from "./pages/partners/PartnersOverview";
+import PartnerDetail from "./pages/partners/PartnerDetail";
 
 const queryClient = new QueryClient();
 
@@ -23,8 +27,12 @@ const router = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/about", element: <About /> },
       { path: "/mission", element: <Mission /> },
-      { path: "/units", element: <UnitsOverview /> },
-      { path: "/units/:slug", element: <UnitDetail /> },
+      { path: "/solutions", element: <SolutionsOverview /> },
+      { path: "/solutions/:slug", element: <SolutionDetail /> },
+      { path: "/products", element: <ProductsOverview /> },
+      { path: "/products/:slug", element: <ProductDetail /> },
+      { path: "/partners", element: <PartnersOverview /> },
+      { path: "/partners/:slug", element: <PartnerDetail /> },
       { path: "/industries", element: <Industries /> },
       { path: "/insights", element: <Insights /> },
       { path: "/contact", element: <Contact /> },

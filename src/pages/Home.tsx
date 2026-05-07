@@ -1,16 +1,30 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Battery, Cpu, Eye, Network } from "lucide-react";
+import {
+  ArrowRight,
+  Cpu,
+  Server,
+  LineChart,
+  BrainCircuit,
+  Leaf,
+  Plug,
+  ArrowUpRight,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PartnerStrip } from "@/components/site/PartnerStrip";
 import { SectionHeader, Eyebrow } from "@/components/site/SectionHeader";
-import { units } from "@/data/units";
+import { solutions } from "@/data/solutions";
+import { products } from "@/data/products";
+import { milestones } from "@/data/history";
+import { headlineStats } from "@/data/clients";
 import hero from "@/assets/hero.jpg";
 
 const pillars = [
-  { icon: Battery, name: "Energy", desc: "Renewables & hydrogen, deployed at scale.", to: "/units/energies" },
-  { icon: Cpu, name: "Compute", desc: "AI silicon and edge inference.", to: "/units/compute" },
-  { icon: Eye, name: "Vision", desc: "Computer vision for cities and industry.", to: "/units/vision" },
-  { icon: Network, name: "Infrastructure", desc: "Embedded systems and monitoring.", to: "/units/hw" },
+  { icon: Cpu, name: "Hardware", desc: "FPGA, embedded and smart-meter platforms.", to: "/solutions/iot-hardware" },
+  { icon: Server, name: "Software", desc: "GridBox head-end and ALT-MBS CIS.", to: "/solutions/headend-integration" },
+  { icon: LineChart, name: "Energy", desc: "EPİAŞ market ops and supply.", to: "/solutions/energy-markets" },
+  { icon: BrainCircuit, name: "AI", desc: "Forecasting and predictive maintenance.", to: "/solutions/ai-development" },
+  { icon: Leaf, name: "ESG", desc: "CO₂, water and audit-ready reporting.", to: "/solutions/sustainability" },
+  { icon: Plug, name: "Power", desc: "UPS and power electronics since 1988.", to: "/solutions/power-electronics" },
 ];
 
 const Home = () => {
@@ -29,42 +43,54 @@ const Home = () => {
         <div className="absolute inset-0 -z-10 bg-grid opacity-40" />
         <div className="container relative pt-24 pb-20 md:pt-36 md:pb-32">
           <div className="max-w-4xl animate-fade-up">
-            <Eyebrow>Infinium Group</Eyebrow>
+            <Eyebrow>Infinium Group · A Turkish technology conglomerate</Eyebrow>
             <h1 className="mt-6 text-5xl font-semibold leading-[1.02] md:text-7xl">
-              AI, Energy and Infrastructure —{" "}
-              <span className="text-gradient">Unified.</span>
+              Hardware, software and energy —{" "}
+              <span className="text-gradient">integrated.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Engineering the infrastructure of tomorrow. A multi-disciplinary platform
-              integrating energy systems, artificial intelligence and industrial hardware.
+              Eight specialist companies, six solution domains, one integrator.
+              Infinium Group has engineered the data, software and physical
+              infrastructure of the Turkish energy sector since 2011.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                <Link to="/units">
-                  Explore business units <ArrowRight className="ml-1 h-4 w-4" />
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+              >
+                <Link to="/solutions">
+                  Explore solutions <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-border bg-background/40 backdrop-blur">
-                <Link to="/about">About Infinium</Link>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-border bg-background/40 backdrop-blur"
+              >
+                <Link to="/about">About the group</Link>
               </Button>
             </div>
           </div>
 
           {/* Pillars */}
-          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {pillars.map((p, i) => (
               <Link
                 key={p.name}
                 to={p.to}
                 style={{ animationDelay: `${100 + i * 80}ms` }}
-                className="group relative animate-fade-up rounded-2xl border border-border bg-card/60 p-6 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-glow"
+                className="group relative animate-fade-up rounded-2xl border border-border bg-card/60 p-5 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-glow"
               >
-                <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
                   <p.icon className="h-5 w-5" />
                 </div>
-                <div className="font-display text-lg font-semibold">{p.name}</div>
-                <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
-                <ArrowRight className="absolute right-5 top-5 h-4 w-4 -translate-x-1 text-muted-foreground opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
+                <div className="font-display text-base font-semibold">
+                  {p.name}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">{p.desc}</p>
+                <ArrowRight className="absolute right-4 top-4 h-3.5 w-3.5 -translate-x-1 text-muted-foreground opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
             ))}
           </div>
@@ -73,41 +99,132 @@ const Home = () => {
 
       <PartnerStrip />
 
-      {/* Business Units overview */}
-      <section className="container py-20 md:py-28">
+      {/* STATS */}
+      <section className="container py-16 md:py-20">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {headlineStats.map((s) => (
+            <div
+              key={s.label}
+              className="rounded-2xl border border-border bg-card p-7 shadow-card"
+            >
+              <div className="font-display text-4xl font-semibold text-gradient md:text-5xl">
+                {s.value}
+              </div>
+              <div className="mt-2 text-sm font-medium">{s.label}</div>
+              <p className="mt-1 text-xs text-muted-foreground">{s.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SOLUTIONS */}
+      <section className="container py-16 md:py-24">
         <SectionHeader
-          eyebrow="Business Units"
-          title={<>One platform. <span className="text-gradient">Six disciplines.</span></>}
-          subtitle="From renewable energy to embedded hardware, every unit is engineered to operate independently — and integrate seamlessly."
+          eyebrow="Solutions"
+          title={
+            <>
+              Six disciplines.{" "}
+              <span className="text-gradient">One integrator.</span>
+            </>
+          }
+          subtitle="Each solution is led by a specialist partner and integrated end-to-end by Infinium Group — from silicon and head-end software to energy markets, AI, ESG and power continuity."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {units.map((u) => (
+          {solutions.map((s) => (
             <Link
-              key={u.slug}
-              to={`/units/${u.slug}`}
+              key={s.slug}
+              to={`/solutions/${s.slug}`}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-card transition-all hover:-translate-y-0.5 hover:border-primary/40"
             >
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition-opacity opacity-0 group-hover:opacity-100" />
               <div className="mb-5 inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
-                <u.icon className="h-5 w-5" />
+                <s.icon className="h-5 w-5" />
               </div>
-              <div className="font-display text-xl font-semibold">{u.name}</div>
-              <p className="mt-2 text-sm text-muted-foreground">{u.tagline}</p>
-              {u.partners.length > 0 && (
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {u.partners.map((p) => (
-                    <span key={p.name} className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] text-muted-foreground">
-                      {p.name}
-                    </span>
-                  ))}
-                </div>
-              )}
+              <div className="font-display text-xl font-semibold leading-tight">
+                {s.name}
+              </div>
+              <p className="mt-2 text-sm text-muted-foreground">{s.tagline}</p>
               <div className="mt-6 inline-flex items-center gap-1 text-sm text-primary">
-                Learn more <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                Learn more{" "}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </div>
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* PRODUCTS */}
+      <section className="border-y border-border/60 bg-card/20 py-20 md:py-24">
+        <div className="container">
+          <SectionHeader
+            eyebrow="Products"
+            title={
+              <>
+                Field-tested platforms,{" "}
+                <span className="text-gradient">deployed since 2011.</span>
+              </>
+            }
+            subtitle="GridBox, ALT-MBS and the Infinium hardware family — running across privatised distribution operators, OIZs, public-sector campuses and international deployments."
+          />
+          <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {products.map((p) => (
+              <Link
+                key={p.slug}
+                to={`/products/${p.slug}`}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-background/60 p-7 shadow-card transition-all hover:-translate-y-0.5 hover:border-primary/40"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
+                    <p.icon className="h-5 w-5" />
+                  </div>
+                  {p.since && (
+                    <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-muted-foreground">
+                      Since {p.since}
+                    </span>
+                  )}
+                </div>
+                <div className="mt-5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
+                  {p.family}
+                </div>
+                <div className="mt-1 font-display text-lg font-semibold">
+                  {p.name}
+                </div>
+                <p className="mt-2 text-sm text-muted-foreground">{p.tagline}</p>
+                <ArrowUpRight className="absolute right-6 top-6 h-4 w-4 text-muted-foreground transition group-hover:text-primary" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TIMELINE */}
+      <section className="container py-20 md:py-24">
+        <SectionHeader
+          eyebrow="Track record"
+          title={
+            <>
+              From the privatisation era{" "}
+              <span className="text-gradient">to the conglomerate.</span>
+            </>
+          }
+          subtitle="Fifteen years engineering the data, software and physical infrastructure of the Turkish energy sector — and now beyond."
+        />
+        <ol className="relative mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-3">
+          {milestones.map((m) => (
+            <li
+              key={m.year}
+              className="rounded-2xl border border-border bg-card p-6 shadow-card"
+            >
+              <div className="font-display text-3xl font-semibold text-gradient">
+                {m.year}
+              </div>
+              <div className="mt-2 text-sm font-medium">{m.title}</div>
+              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                {m.body}
+              </p>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* CTA */}
@@ -121,12 +238,19 @@ const Home = () => {
                 Build with Infinium.
               </h3>
               <p className="mt-3 max-w-xl text-muted-foreground">
-                Energy operators, cities and industrial groups partner with us to deploy unified
-                infrastructure — faster, smarter, measurable.
+                Distribution operators, industrial groups, OIZs and public-sector
+                campuses partner with Infinium Group to deploy unified
+                infrastructure — measurable, integrated, supported.
               </p>
             </div>
-            <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-              <Link to="/contact">Talk to us <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <Link to="/contact">
+                Talk to us <ArrowRight className="ml-1 h-4 w-4" />
+              </Link>
             </Button>
           </div>
         </div>
