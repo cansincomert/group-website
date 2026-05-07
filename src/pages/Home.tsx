@@ -1,18 +1,18 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   ArrowRight,
-  Cpu,
-  Server,
-  LineChart,
-  BrainCircuit,
-  Leaf,
-  Plug,
+  CircuitBoard,
+  Eye,
   Activity,
-  Wind,
+  Battery,
+  Cpu,
+  Leaf,
   ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { PartnerStrip } from "@/components/site/PartnerStrip";
+import { PartnerMarquee } from "@/components/site/PartnerMarquee";
+import { IntroVideo } from "@/components/site/IntroVideo";
 import { SectionHeader, Eyebrow } from "@/components/site/SectionHeader";
 import { solutions } from "@/data/solutions";
 import { products } from "@/data/products";
@@ -21,17 +21,17 @@ import { headlineStats } from "@/data/clients";
 import hero from "@/assets/hero.jpg";
 
 const pillars = [
-  { icon: Cpu, name: "Hardware", desc: "FPGA, embedded and smart-meter platforms.", to: "/solutions/iot-hardware" },
-  { icon: Server, name: "Software", desc: "GridBox head-end and ALT-MBS CIS.", to: "/solutions/headend-integration" },
-  { icon: Activity, name: "Monitoring", desc: "Real-time telemetry and IoT 4.0.", to: "/solutions/monitoring" },
-  { icon: LineChart, name: "Energy", desc: "EPİAŞ market ops and supply.", to: "/solutions/energy-markets" },
-  { icon: Wind, name: "Renewables", desc: "EPC, storage and hydrogen R&D.", to: "/solutions/renewables-epc" },
-  { icon: BrainCircuit, name: "AI", desc: "Forecasting, maintenance and silicon.", to: "/solutions/ai-development" },
-  { icon: Leaf, name: "ESG", desc: "CO₂, water and audit-ready reporting.", to: "/solutions/sustainability" },
-  { icon: Plug, name: "Power", desc: "UPS and power electronics since 1988.", to: "/solutions/power-electronics" },
-];
+  { icon: CircuitBoard, key: "hw", to: "/solutions/hw" },
+  { icon: Eye, key: "vision", to: "/solutions/vision" },
+  { icon: Activity, key: "monitoring", to: "/solutions/monitoring" },
+  { icon: Battery, key: "energies", to: "/solutions/energies" },
+  { icon: Cpu, key: "compute", to: "/solutions/compute" },
+  { icon: Leaf, key: "sustainability", to: "/solutions/sustainability" },
+] as const;
 
 const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       {/* HERO */}
@@ -47,16 +47,13 @@ const Home = () => {
         <div className="absolute inset-0 -z-10 bg-grid opacity-40" />
         <div className="container relative pt-24 pb-20 md:pt-36 md:pb-32">
           <div className="max-w-4xl animate-fade-up">
-            <Eyebrow>Infinium Group · A Turkish technology conglomerate</Eyebrow>
+            <Eyebrow>{t("home.eyebrow")}</Eyebrow>
             <h1 className="mt-6 text-5xl font-semibold leading-[1.02] md:text-7xl">
-              Hardware, software and energy —{" "}
-              <span className="text-gradient">integrated.</span>
+              {t("home.titleA")}{" "}
+              <span className="text-gradient">{t("home.titleHighlight")}</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Twelve specialist companies, eight solution domains, one
-              integrator. Infinium Group has engineered the data, software
-              and physical infrastructure of the Turkish energy sector since
-              2011.
+              {t("home.subtitle")}
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -65,7 +62,7 @@ const Home = () => {
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <Link to="/solutions">
-                  Explore solutions <ArrowRight className="ml-1 h-4 w-4" />
+                  {t("home.exploreSolutions")} <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </Button>
               <Button
@@ -74,16 +71,16 @@ const Home = () => {
                 variant="outline"
                 className="border-border bg-background/40 backdrop-blur"
               >
-                <Link to="/about">About the group</Link>
+                <Link to="/about">{t("home.aboutGroup")}</Link>
               </Button>
             </div>
           </div>
 
           {/* Pillars */}
-          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {pillars.map((p, i) => (
               <Link
-                key={p.name}
+                key={p.key}
                 to={p.to}
                 style={{ animationDelay: `${100 + i * 80}ms` }}
                 className="group relative animate-fade-up rounded-2xl border border-border bg-card/60 p-5 backdrop-blur transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-glow"
@@ -92,9 +89,11 @@ const Home = () => {
                   <p.icon className="h-5 w-5" />
                 </div>
                 <div className="font-display text-base font-semibold">
-                  {p.name}
+                  {t(`home.pillars.${p.key}.name`)}
                 </div>
-                <p className="mt-1 text-xs text-muted-foreground">{p.desc}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  {t(`home.pillars.${p.key}.desc`)}
+                </p>
                 <ArrowRight className="absolute right-4 top-4 h-3.5 w-3.5 -translate-x-1 text-muted-foreground opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100" />
               </Link>
             ))}
@@ -102,7 +101,9 @@ const Home = () => {
         </div>
       </section>
 
-      <PartnerStrip />
+      <PartnerMarquee />
+
+      <IntroVideo />
 
       {/* STATS */}
       <section className="container py-16 md:py-20">
@@ -125,14 +126,16 @@ const Home = () => {
       {/* SOLUTIONS */}
       <section className="container py-16 md:py-24">
         <SectionHeader
-          eyebrow="Solutions"
+          eyebrow={t("home.solutionsEyebrow")}
           title={
             <>
-              Eight disciplines.{" "}
-              <span className="text-gradient">One integrator.</span>
+              {t("home.solutionsTitleA")}{" "}
+              <span className="text-gradient">
+                {t("home.solutionsTitleHighlight")}
+              </span>
             </>
           }
-          subtitle="Each solution is led by specialist partners and integrated end-to-end by Infinium Group — from silicon and head-end software to monitoring, energy markets, renewables, AI, ESG and power continuity."
+          subtitle={t("home.solutionsSubtitle")}
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((s) => (
@@ -150,7 +153,7 @@ const Home = () => {
               </div>
               <p className="mt-2 text-sm text-muted-foreground">{s.tagline}</p>
               <div className="mt-6 inline-flex items-center gap-1 text-sm text-primary">
-                Learn more{" "}
+                {t("common.learnMore")}{" "}
                 <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
               </div>
             </Link>
@@ -162,14 +165,16 @@ const Home = () => {
       <section className="border-y border-border/60 bg-card/20 py-20 md:py-24">
         <div className="container">
           <SectionHeader
-            eyebrow="Products"
+            eyebrow={t("home.productsEyebrow")}
             title={
               <>
-                Field-tested platforms,{" "}
-                <span className="text-gradient">deployed since 2011.</span>
+                {t("home.productsTitleA")}{" "}
+                <span className="text-gradient">
+                  {t("home.productsTitleHighlight")}
+                </span>
               </>
             }
-            subtitle="GridBox, ALT-MBS and the Infinium hardware family — running across privatised distribution operators, OIZs, public-sector campuses and international deployments."
+            subtitle={t("home.productsSubtitle")}
           />
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {products.map((p) => (
@@ -184,7 +189,7 @@ const Home = () => {
                   </div>
                   {p.since && (
                     <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-muted-foreground">
-                      Since {p.since}
+                      {p.since}
                     </span>
                   )}
                 </div>
@@ -205,14 +210,16 @@ const Home = () => {
       {/* TIMELINE */}
       <section className="container py-20 md:py-24">
         <SectionHeader
-          eyebrow="Track record"
+          eyebrow={t("home.historyEyebrow")}
           title={
             <>
-              From the privatisation era{" "}
-              <span className="text-gradient">to the conglomerate.</span>
+              {t("home.historyTitleA")}{" "}
+              <span className="text-gradient">
+                {t("home.historyTitleHighlight")}
+              </span>
             </>
           }
-          subtitle="Fifteen years engineering the data, software and physical infrastructure of the Turkish energy sector — and now beyond."
+          subtitle={t("home.historySubtitle")}
         />
         <ol className="relative mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-3">
           {milestones.map((m) => (
@@ -240,12 +247,10 @@ const Home = () => {
           <div className="relative grid items-center gap-8 md:grid-cols-[1fr_auto]">
             <div>
               <h3 className="text-3xl font-semibold leading-tight md:text-4xl">
-                Build with Infinium.
+                {t("home.ctaTitle")}
               </h3>
               <p className="mt-3 max-w-xl text-muted-foreground">
-                Distribution operators, industrial groups, OIZs and public-sector
-                campuses partner with Infinium Group to deploy unified
-                infrastructure — measurable, integrated, supported.
+                {t("home.ctaBody")}
               </p>
             </div>
             <Button
@@ -254,7 +259,7 @@ const Home = () => {
               className="bg-primary text-primary-foreground hover:bg-primary/90"
             >
               <Link to="/contact">
-                Talk to us <ArrowRight className="ml-1 h-4 w-4" />
+                {t("common.talkToUs")} <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </Button>
           </div>

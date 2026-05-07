@@ -1,29 +1,32 @@
 import { useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { solutions } from "@/data/solutions";
 import { products } from "@/data/products";
 import { Button } from "@/components/ui/button";
 
 type NavItem = {
   to: string;
-  label: string;
+  labelKey: string;
   menu?: "solutions" | "products";
 };
 
 const nav: NavItem[] = [
-  { to: "/about", label: "About" },
-  { to: "/solutions", label: "Solutions", menu: "solutions" },
-  { to: "/products", label: "Products", menu: "products" },
-  { to: "/partners", label: "Partners" },
-  { to: "/industries", label: "Industries" },
-  { to: "/insights", label: "Insights" },
+  { to: "/about", labelKey: "nav.about" },
+  { to: "/solutions", labelKey: "nav.units", menu: "solutions" },
+  { to: "/products", labelKey: "nav.products", menu: "products" },
+  { to: "/partners", labelKey: "nav.partners" },
+  { to: "/industries", labelKey: "nav.industries" },
+  { to: "/insights", labelKey: "nav.insights" },
 ];
 
 export const Header = () => {
   const [open, setOpen] = useState(false);
   const loc = useLocation();
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#011140]/95 backdrop-blur-xl">
@@ -42,7 +45,7 @@ export const Header = () => {
                   }`
                 }
               >
-                {item.label}
+                {t(item.labelKey)}
                 {item.menu && <ChevronDown className="h-3.5 w-3.5 opacity-60" />}
               </NavLink>
               {item.menu === "solutions" && (
@@ -92,13 +95,14 @@ export const Header = () => {
             </div>
           ))}
         </nav>
-        <div className="hidden lg:block">
+        <div className="hidden items-center gap-3 lg:flex">
+          <LanguageSwitcher />
           <Button
             asChild
             size="sm"
             className="bg-transparent text-white border border-white/30 hover:bg-white hover:text-[#011140] transition-colors"
           >
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">{t("nav.contact")}</Link>
           </Button>
         </div>
 
@@ -125,7 +129,7 @@ export const Header = () => {
                     : "text-slate-300 hover:text-white"
                 }`}
               >
-                {i.label}
+                {t(i.labelKey)}
               </Link>
             ))}
             <Link
@@ -133,8 +137,11 @@ export const Header = () => {
               onClick={() => setOpen(false)}
               className="mt-2 rounded-md border border-white/20 px-3 py-2 text-center text-sm text-white"
             >
-              Contact
+              {t("nav.contact")}
             </Link>
+            <div className="mt-3 flex justify-center">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}

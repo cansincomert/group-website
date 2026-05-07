@@ -27,7 +27,7 @@ export const partners: Partner[] = [
       "Embedded HW/SW co-design",
       "Industry 4.0 device engineering",
     ],
-    solutionSlug: "iot-hardware",
+    solutionSlug: "hw",
   },
   {
     slug: "intheca",
@@ -44,7 +44,7 @@ export const partners: Partner[] = [
       "Industrial electronics",
       "IoT field devices",
     ],
-    solutionSlug: "iot-hardware",
+    solutionSlug: "hw",
   },
   {
     slug: "hayen",
@@ -61,7 +61,7 @@ export const partners: Partner[] = [
       "Remote meter reading at DSO scale",
       "Energy-efficiency analytics",
     ],
-    solutionSlug: "headend-integration",
+    solutionSlug: "vision",
   },
   {
     slug: "utiligize",
@@ -77,7 +77,7 @@ export const partners: Partner[] = [
       "Lifecycle modelling for grid assets",
       "International deployments with Infinium",
     ],
-    solutionSlug: "headend-integration",
+    solutionSlug: "monitoring",
   },
   {
     slug: "upu",
@@ -108,7 +108,7 @@ export const partners: Partner[] = [
       "Day-ahead and intraday trading",
       "Balancing & imbalance management",
     ],
-    solutionSlug: "energy-markets",
+    solutionSlug: "energies",
   },
   {
     slug: "goktekin",
@@ -123,7 +123,7 @@ export const partners: Partner[] = [
       "Grid integration & commissioning",
       "Project development support",
     ],
-    solutionSlug: "renewables-epc",
+    solutionSlug: "energies",
   },
   {
     slug: "inrag",
@@ -138,7 +138,7 @@ export const partners: Partner[] = [
       "Clean-energy research",
       "Renewable-integration studies",
     ],
-    solutionSlug: "renewables-epc",
+    solutionSlug: "energies",
   },
   {
     slug: "cozeka",
@@ -155,7 +155,7 @@ export const partners: Partner[] = [
       "Predictive maintenance",
       "EMS optimisation",
     ],
-    solutionSlug: "ai-development",
+    solutionSlug: "vision",
   },
   {
     slug: "sophgo",
@@ -171,7 +171,7 @@ export const partners: Partner[] = [
       "Edge inference platforms",
       "On-prem model deployment",
     ],
-    solutionSlug: "ai-development",
+    solutionSlug: "compute",
   },
   {
     slug: "cleture",
@@ -204,7 +204,7 @@ export const partners: Partner[] = [
       "Voltage stabilisers and regulators",
       "Battery and solar power systems",
     ],
-    solutionSlug: "power-electronics",
+    solutionSlug: "monitoring",
   },
 ];
 

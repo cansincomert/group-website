@@ -7,7 +7,7 @@ const posts = [
     date: "January 2026",
     title: "Infinium Group is formed",
     excerpt:
-      "Eight specialist companies and six solution domains — hardware, head-end software, energy markets, AI, ESG and power electronics — unify under a single integrator.",
+      "Twelve specialist companies and six Infinium units — Infinium HW, Vision Intelligence, Monitoring, Energies, Compute and Sustainability — unify under a single integrator.",
   },
   {
     tag: "Product",
