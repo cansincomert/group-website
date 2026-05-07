@@ -45,7 +45,7 @@ const About = () => (
           <span className="text-gradient">disciplines.</span>
         </>
       }
-      subtitle="Eight specialist companies, six solution domains, one integrator — engineering the data, software and physical infrastructure of the Turkish energy sector since 2011."
+      subtitle="Twelve specialist companies, eight solution domains, one integrator — engineering the data, software and physical infrastructure of the Turkish energy sector since 2011."
     />
 
     <section className="container py-20">
@@ -77,7 +77,7 @@ const About = () => (
               <span className="text-gradient">Integrator-led delivery.</span>
             </>
           }
-          subtitle="Each domain is led by a specialist partner — Kuantek, Intheca, Hayen Teknoloji, Utiligize, ANT Enerji, CoZeka, Cleture and Enel Enerji — while Infinium Group owns the system-integration layer, the GridBox and ALT-MBS platforms, and the customer relationship."
+          subtitle="Each domain is led by specialist partners — Kuantek, Intheca, Hayen Teknoloji, Utiligize, Upu.io, ANT Enerji, Göktekin Enerji, INRAG, CoZeka, Sophgo, Cleture and Enel Enerji — while Infinium Group owns the system-integration layer, the GridBox and ALT-MBS platforms, and the customer relationship."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           <article className="rounded-2xl border border-border bg-background/60 p-7 shadow-card">
@@ -103,9 +103,11 @@ const About = () => (
             </div>
             <h3 className="text-lg font-semibold">Specialist partners</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Hardware (Kuantek, Intheca), head-end and asset management (Hayen
-              Teknoloji, Utiligize), energy markets (ANT Enerji), AI (CoZeka),
-              sustainability (Cleture), power electronics (Enel Enerji).
+              Hardware (Kuantek, Intheca), head-end & asset management (Hayen
+              Teknoloji, Utiligize), monitoring (Upu.io), energy markets
+              (ANT Enerji), renewables & hydrogen (Göktekin Enerji, INRAG),
+              AI & compute (CoZeka, Sophgo), sustainability (Cleture), power
+              electronics (Enel Enerji).
             </p>
             <Link
               to="/solutions"

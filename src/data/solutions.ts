@@ -5,6 +5,8 @@ import {
   BrainCircuit,
   Leaf,
   Plug,
+  Activity,
+  Wind,
   type LucideIcon,
 } from "lucide-react";
 
@@ -64,6 +66,27 @@ export const solutions: Solution[] = [
     ],
   },
   {
+    slug: "monitoring",
+    name: "Operational Monitoring & IoT 4.0",
+    short: "Monitoring",
+    tagline: "Real-time energy and asset telemetry, dashboards in production.",
+    icon: Activity,
+    description:
+      "Continuous monitoring of energy, assets and operational signals across plants, OIZs, campuses and renewable sites — surfacing anomalies, asset health and consumption insight on dashboards engineered for industrial use.",
+    capabilities: [
+      "Energy and consumption tracking",
+      "Operational dashboards for plant & site teams",
+      "Anomaly detection on telemetry streams",
+      "IoT 4.0 device onboarding & data pipelines",
+    ],
+    partnerSlugs: ["upu"],
+    outcomes: [
+      "Live dashboards across renewable assets and industry",
+      "Asset telemetry feeding into AI forecasting",
+      "Pipelines that bridge the head-end and the operations floor",
+    ],
+  },
+  {
     slug: "energy-markets",
     name: "Energy Markets & Trading Operations",
     short: "Energy Markets",
@@ -85,24 +108,45 @@ export const solutions: Solution[] = [
     ],
   },
   {
+    slug: "renewables-epc",
+    name: "Renewable EPC & Hydrogen",
+    short: "Renewables & H₂",
+    tagline: "From project development to commissioning — and into hydrogen.",
+    icon: Wind,
+    description:
+      "Renewable generation projects (solar, wind, storage) delivered as engineering, procurement and construction, plus hydrogen-systems R&D for the next wave of clean-energy infrastructure.",
+    capabilities: [
+      "Solar, wind and battery-storage EPC",
+      "Grid integration and commissioning",
+      "Hydrogen systems research & development",
+      "Project development & permitting support",
+    ],
+    partnerSlugs: ["goktekin", "inrag"],
+    outcomes: [
+      "Battery storage facility delivered with TÜBİTAK",
+      "EMS deployments on solar generation sites",
+      "Hydrogen R&D pipeline for the energy-transition decade",
+    ],
+  },
+  {
     slug: "ai-development",
-    name: "Applied AI & Forecasting",
+    name: "Applied AI, Forecasting & Compute",
     short: "AI",
-    tagline: "Predictive models trained on real grid and asset data.",
+    tagline: "Predictive models — and the silicon that runs them at the edge.",
     icon: BrainCircuit,
     description:
-      "AI-driven generation forecasting, predictive maintenance and consumption optimisation for renewable assets, EMS deployments and distribution networks. Includes wind farm modelling delivered for SANKO Çatalca RES.",
+      "AI-driven generation forecasting, predictive maintenance and consumption optimisation, paired with high-performance AI silicon for on-site inference. Includes wind farm modelling delivered for SANKO Çatalca RES.",
     capabilities: [
       "Wind & solar generation forecasting (mast / mast-less)",
       "Predictive maintenance for renewable assets",
       "Load and consumption prediction for DSOs",
-      "EMS optimisation and anomaly detection",
+      "AI accelerators and edge-inference deployment",
     ],
-    partnerSlugs: ["cozeka"],
+    partnerSlugs: ["cozeka", "sophgo"],
     outcomes: [
       "Wind farm modelling delivered with and without mast data",
       "AI layered onto existing EMS deployments",
-      "Forecast-driven procurement and dispatch",
+      "Edge inference at industrial sites and substations",
     ],
   },
   {

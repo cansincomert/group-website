@@ -10,11 +10,11 @@ const SolutionsOverview = () => (
       eyebrow="Solutions"
       title={
         <>
-          Six disciplines.{" "}
+          Eight disciplines.{" "}
           <span className="text-gradient">One integrator.</span>
         </>
       }
-      subtitle="Each Infinium solution domain is led by a specialist partner and integrated end-to-end by Infinium Group — from silicon and head-end software to energy markets, AI, ESG and power continuity."
+      subtitle="Each Infinium solution domain is led by specialist partners and integrated end-to-end by Infinium Group — from silicon and head-end software to monitoring, energy markets, renewables, AI, ESG and power continuity."
     />
     <section className="container py-20">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

@@ -14,7 +14,7 @@ const PartnersOverview = () => (
           <span className="text-gradient">platform.</span>
         </>
       }
-      subtitle="Eight specialist partners across hardware, software, energy markets, AI, sustainability and power electronics — integrated by Infinium Group into a single conglomerate offering."
+      subtitle="Twelve specialist partners across hardware, software, monitoring, energy markets, renewables, AI, sustainability and power electronics — integrated by Infinium Group into a single conglomerate offering."
     />
     <section className="container py-20">
       <div className="grid gap-4 md:grid-cols-2">
