@@ -80,6 +80,22 @@ export const partners: Partner[] = [
     solutionSlug: "headend-integration",
   },
   {
+    slug: "upu",
+    name: "Upu.io",
+    url: "https://upu.io/",
+    hq: "Türkiye",
+    role: "Operational Monitoring & IoT 4.0",
+    domain: "Monitoring",
+    description:
+      "Industrial monitoring and IoT 4.0 platform delivering real-time energy, asset and operational telemetry through dashboards engineered for plant teams, OIZs and renewable site operators.",
+    highlights: [
+      "Energy & asset telemetry",
+      "Operational dashboards",
+      "IoT 4.0 device onboarding",
+    ],
+    solutionSlug: "monitoring",
+  },
+  {
     slug: "ant",
     name: "ANT Enerji",
     hq: "Türkiye",
@@ -95,6 +111,36 @@ export const partners: Partner[] = [
     solutionSlug: "energy-markets",
   },
   {
+    slug: "goktekin",
+    name: "Göktekin Enerji",
+    hq: "Türkiye",
+    role: "Renewable EPC",
+    domain: "Renewables",
+    description:
+      "Energy EPC partner delivering renewable generation projects — solar, wind and storage — from development through grid commissioning.",
+    highlights: [
+      "Solar, wind and storage EPC",
+      "Grid integration & commissioning",
+      "Project development support",
+    ],
+    solutionSlug: "renewables-epc",
+  },
+  {
+    slug: "inrag",
+    name: "INRAG",
+    hq: "Türkiye",
+    role: "Hydrogen R&D",
+    domain: "Renewables",
+    description:
+      "Research and development partner focused on hydrogen systems and next-generation clean-energy infrastructure, supporting Infinium's renewables-and-hydrogen pipeline.",
+    highlights: [
+      "Hydrogen systems R&D",
+      "Clean-energy research",
+      "Renewable-integration studies",
+    ],
+    solutionSlug: "renewables-epc",
+  },
+  {
     slug: "cozeka",
     name: "CoZeka",
     legalName: "CoZeka Technology",
@@ -108,6 +154,22 @@ export const partners: Partner[] = [
       "Generation & consumption forecasting",
       "Predictive maintenance",
       "EMS optimisation",
+    ],
+    solutionSlug: "ai-development",
+  },
+  {
+    slug: "sophgo",
+    name: "Sophgo",
+    url: "https://www.sophgo.com/",
+    hq: "China",
+    role: "AI Compute Silicon",
+    domain: "AI",
+    description:
+      "AI compute provider developing accelerator chips and RISC-V CPUs — the SOPHON series and SC-class compute cards — used to run inference at the edge of industrial and energy infrastructure.",
+    highlights: [
+      "AI accelerator chips",
+      "Edge inference platforms",
+      "On-prem model deployment",
     ],
     solutionSlug: "ai-development",
   },

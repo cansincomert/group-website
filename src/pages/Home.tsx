@@ -7,6 +7,8 @@ import {
   BrainCircuit,
   Leaf,
   Plug,
+  Activity,
+  Wind,
   ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,8 +23,10 @@ import hero from "@/assets/hero.jpg";
 const pillars = [
   { icon: Cpu, name: "Hardware", desc: "FPGA, embedded and smart-meter platforms.", to: "/solutions/iot-hardware" },
   { icon: Server, name: "Software", desc: "GridBox head-end and ALT-MBS CIS.", to: "/solutions/headend-integration" },
+  { icon: Activity, name: "Monitoring", desc: "Real-time telemetry and IoT 4.0.", to: "/solutions/monitoring" },
   { icon: LineChart, name: "Energy", desc: "EPİAŞ market ops and supply.", to: "/solutions/energy-markets" },
-  { icon: BrainCircuit, name: "AI", desc: "Forecasting and predictive maintenance.", to: "/solutions/ai-development" },
+  { icon: Wind, name: "Renewables", desc: "EPC, storage and hydrogen R&D.", to: "/solutions/renewables-epc" },
+  { icon: BrainCircuit, name: "AI", desc: "Forecasting, maintenance and silicon.", to: "/solutions/ai-development" },
   { icon: Leaf, name: "ESG", desc: "CO₂, water and audit-ready reporting.", to: "/solutions/sustainability" },
   { icon: Plug, name: "Power", desc: "UPS and power electronics since 1988.", to: "/solutions/power-electronics" },
 ];
@@ -49,9 +53,10 @@ const Home = () => {
               <span className="text-gradient">integrated.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Eight specialist companies, six solution domains, one integrator.
-              Infinium Group has engineered the data, software and physical
-              infrastructure of the Turkish energy sector since 2011.
+              Twelve specialist companies, eight solution domains, one
+              integrator. Infinium Group has engineered the data, software
+              and physical infrastructure of the Turkish energy sector since
+              2011.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -75,7 +80,7 @@ const Home = () => {
           </div>
 
           {/* Pillars */}
-          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
             {pillars.map((p, i) => (
               <Link
                 key={p.name}
@@ -123,11 +128,11 @@ const Home = () => {
           eyebrow="Solutions"
           title={
             <>
-              Six disciplines.{" "}
+              Eight disciplines.{" "}
               <span className="text-gradient">One integrator.</span>
             </>
           }
-          subtitle="Each solution is led by a specialist partner and integrated end-to-end by Infinium Group — from silicon and head-end software to energy markets, AI, ESG and power continuity."
+          subtitle="Each solution is led by specialist partners and integrated end-to-end by Infinium Group — from silicon and head-end software to monitoring, energy markets, renewables, AI, ESG and power continuity."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((s) => (
