@@ -28,7 +28,7 @@ export const Footer = () => (
         ]}
       />
       <FooterCol
-        title="Solutions"
+        title="Business Units"
         links={solutions.map((s) => ({
           to: `/solutions/${s.slug}`,
           label: s.name,

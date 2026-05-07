@@ -1,14 +1,12 @@
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  Cpu,
-  Server,
-  LineChart,
-  BrainCircuit,
-  Leaf,
-  Plug,
+  CircuitBoard,
+  Eye,
   Activity,
-  Wind,
+  Battery,
+  Cpu,
+  Leaf,
   ArrowUpRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -21,14 +19,12 @@ import { headlineStats } from "@/data/clients";
 import hero from "@/assets/hero.jpg";
 
 const pillars = [
-  { icon: Cpu, name: "Hardware", desc: "FPGA, embedded and smart-meter platforms.", to: "/solutions/iot-hardware" },
-  { icon: Server, name: "Software", desc: "GridBox head-end and ALT-MBS CIS.", to: "/solutions/headend-integration" },
-  { icon: Activity, name: "Monitoring", desc: "Real-time telemetry and IoT 4.0.", to: "/solutions/monitoring" },
-  { icon: LineChart, name: "Energy", desc: "EPİAŞ market ops and supply.", to: "/solutions/energy-markets" },
-  { icon: Wind, name: "Renewables", desc: "EPC, storage and hydrogen R&D.", to: "/solutions/renewables-epc" },
-  { icon: BrainCircuit, name: "AI", desc: "Forecasting, maintenance and silicon.", to: "/solutions/ai-development" },
-  { icon: Leaf, name: "ESG", desc: "CO₂, water and audit-ready reporting.", to: "/solutions/sustainability" },
-  { icon: Plug, name: "Power", desc: "UPS and power electronics since 1988.", to: "/solutions/power-electronics" },
+  { icon: CircuitBoard, name: "Infinium HW", desc: "Embedded systems & industrial electronics.", to: "/solutions/hw" },
+  { icon: Eye, name: "Vision Intelligence", desc: "Computer vision & smart-city analytics.", to: "/solutions/vision" },
+  { icon: Activity, name: "Monitoring", desc: "Energy tracking & operational dashboards.", to: "/solutions/monitoring" },
+  { icon: Battery, name: "Energies", desc: "Renewables, storage & hydrogen at scale.", to: "/solutions/energies" },
+  { icon: Cpu, name: "Compute", desc: "AI silicon & edge inference.", to: "/solutions/compute" },
+  { icon: Leaf, name: "Sustainability", desc: "ESG, carbon and audit-ready reporting.", to: "/solutions/sustainability" },
 ];
 
 const Home = () => {
@@ -53,10 +49,9 @@ const Home = () => {
               <span className="text-gradient">integrated.</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl">
-              Twelve specialist companies, eight solution domains, one
-              integrator. Infinium Group has engineered the data, software
-              and physical infrastructure of the Turkish energy sector since
-              2011.
+              Twelve specialist companies. Six Infinium units. One
+              integrator. Engineering the data, software and physical
+              infrastructure of the Turkish energy sector since 2011.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button
@@ -80,7 +75,7 @@ const Home = () => {
           </div>
 
           {/* Pillars */}
-          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
+          <div className="mt-20 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {pillars.map((p, i) => (
               <Link
                 key={p.name}
@@ -125,14 +120,14 @@ const Home = () => {
       {/* SOLUTIONS */}
       <section className="container py-16 md:py-24">
         <SectionHeader
-          eyebrow="Solutions"
+          eyebrow="Business Units"
           title={
             <>
-              Eight disciplines.{" "}
+              Six Infinium units.{" "}
               <span className="text-gradient">One integrator.</span>
             </>
           }
-          subtitle="Each solution is led by specialist partners and integrated end-to-end by Infinium Group — from silicon and head-end software to monitoring, energy markets, renewables, AI, ESG and power continuity."
+          subtitle="Each unit is led by specialist partners and integrated end-to-end by Infinium Group — hardware, vision intelligence, monitoring, renewable energies, AI compute and sustainability."
         />
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {solutions.map((s) => (

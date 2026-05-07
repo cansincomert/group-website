@@ -45,7 +45,7 @@ const About = () => (
           <span className="text-gradient">disciplines.</span>
         </>
       }
-      subtitle="Twelve specialist companies, eight solution domains, one integrator — engineering the data, software and physical infrastructure of the Turkish energy sector since 2011."
+      subtitle="Twelve specialist companies. Six Infinium units. One integrator — engineering the data, software and physical infrastructure of the Turkish energy sector since 2011."
     />
 
     <section className="container py-20">
@@ -103,17 +103,16 @@ const About = () => (
             </div>
             <h3 className="text-lg font-semibold">Specialist partners</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              Hardware (Kuantek, Intheca), head-end & asset management (Hayen
-              Teknoloji, Utiligize), monitoring (Upu.io), energy markets
-              (ANT Enerji), renewables & hydrogen (Göktekin Enerji, INRAG),
-              AI & compute (CoZeka, Sophgo), sustainability (Cleture), power
-              electronics (Enel Enerji).
+              Infinium HW (Kuantek, Intheca), Vision Intelligence (Hayen
+              Teknoloji, CoZeka), Monitoring (Upu.io, Utiligize, Enel Enerji),
+              Energies (INRAG, Göktekin Enerji, ANT Enerji), Compute (Sophgo),
+              Sustainability (Cleture).
             </p>
             <Link
               to="/solutions"
               className="mt-5 inline-flex text-sm text-primary hover:underline"
             >
-              See the six solution domains →
+              See the six Infinium units →
             </Link>
           </article>
         </div>

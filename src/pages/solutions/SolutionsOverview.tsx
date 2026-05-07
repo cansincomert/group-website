@@ -7,14 +7,14 @@ import { partnersBySolution } from "@/data/partners";
 const SolutionsOverview = () => (
   <>
     <PageHero
-      eyebrow="Solutions"
+      eyebrow="Business Units"
       title={
         <>
-          Eight disciplines.{" "}
+          Six Infinium units.{" "}
           <span className="text-gradient">One integrator.</span>
         </>
       }
-      subtitle="Each Infinium solution domain is led by specialist partners and integrated end-to-end by Infinium Group — from silicon and head-end software to monitoring, energy markets, renewables, AI, ESG and power continuity."
+      subtitle="Each unit is led by specialist partners and integrated end-to-end by Infinium Group — Infinium HW, Vision Intelligence, Monitoring, Energies, Compute and Sustainability."
     />
     <section className="container py-20">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">

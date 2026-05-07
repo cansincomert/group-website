@@ -14,7 +14,7 @@ type NavItem = {
 
 const nav: NavItem[] = [
   { to: "/about", label: "About" },
-  { to: "/solutions", label: "Solutions", menu: "solutions" },
+  { to: "/solutions", label: "Business Units", menu: "solutions" },
   { to: "/products", label: "Products", menu: "products" },
   { to: "/partners", label: "Partners" },
   { to: "/industries", label: "Industries" },
