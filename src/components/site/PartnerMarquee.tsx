@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { partners } from "@/data/partners";
 
 const LogoTile = ({
@@ -29,23 +30,24 @@ const LogoTile = ({
 };
 
 export const PartnerMarquee = () => {
+  const { t } = useTranslation();
   // Duplicate the list so the translate animation can loop seamlessly.
   const loop = [...partners, ...partners];
 
   return (
     <section
-      aria-label="Partner ecosystem"
+      aria-label={t("partnerStrip.title")}
       className="border-y border-white/10 bg-[#020a26] py-10"
     >
       <div className="container mb-6 flex items-center justify-between">
         <div className="text-xs uppercase tracking-[0.22em] text-slate-400">
-          Ecosystem partners
+          {t("partnerStrip.title")}
         </div>
         <Link
           to="/partners"
           className="text-xs uppercase tracking-[0.18em] text-slate-400 hover:text-primary"
         >
-          View all →
+          {t("partnerStrip.viewAll")}
         </Link>
       </div>
 

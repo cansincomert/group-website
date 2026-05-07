@@ -1,0 +1,112 @@
+const en = {
+  nav: {
+    about: "About",
+    units: "Business Units",
+    products: "Products",
+    partners: "Partners",
+    industries: "Industries",
+    insights: "Insights",
+    contact: "Contact",
+  },
+  common: {
+    learnMore: "Learn more",
+    openSolution: "Open unit",
+    openProduct: "Open product",
+    talkToUs: "Talk to us",
+    viewAll: "View all",
+    backToSolutions: "All units",
+    backToProducts: "All products",
+    backToPartners: "All partners",
+    nextUnit: "Next unit",
+    nextProduct: "Next product",
+    nextPartner: "Next partner",
+    capabilities: "Capabilities",
+    fieldOutcomes: "Field outcomes",
+    ecosystemPartners: "Ecosystem partners",
+    profile: "Profile",
+    engage: "Engage",
+    legalEntity: "Legal entity",
+    headquarters: "Headquarters",
+    domain: "Domain",
+    website: "Website",
+    family: "Family",
+    inProductionSince: "In production since",
+    inHouse: "Delivered in-house by Infinium Group.",
+    contactUnit: "Contact team",
+    linkedSolution: "Linked unit",
+    whatTheyBring: "What they bring",
+  },
+  home: {
+    eyebrow: "Infinium Group · A Turkish technology conglomerate",
+    titleA: "Hardware, software and energy —",
+    titleHighlight: "integrated.",
+    subtitle:
+      "Twelve specialist companies. Six Infinium units. One integrator. Engineering the data, software and physical infrastructure of the Turkish energy sector since 2011.",
+    exploreSolutions: "Explore business units",
+    aboutGroup: "About the group",
+    pillars: {
+      hw: { name: "Infinium HW", desc: "Embedded systems & industrial electronics." },
+      vision: { name: "Vision Intelligence", desc: "Computer vision & smart-city analytics." },
+      monitoring: { name: "Monitoring", desc: "Energy tracking & operational dashboards." },
+      energies: { name: "Energies", desc: "Renewables, storage & hydrogen at scale." },
+      compute: { name: "Compute", desc: "AI silicon & edge inference." },
+      sustainability: { name: "Sustainability", desc: "ESG, carbon & audit-ready reporting." },
+    },
+    solutionsEyebrow: "Business Units",
+    solutionsTitleA: "Six Infinium units.",
+    solutionsTitleHighlight: "One integrator.",
+    solutionsSubtitle:
+      "Each unit is led by specialist partners and integrated end-to-end by Infinium Group — hardware, vision intelligence, monitoring, renewable energies, AI compute and sustainability.",
+    productsEyebrow: "Products",
+    productsTitleA: "Field-tested platforms,",
+    productsTitleHighlight: "deployed since 2011.",
+    productsSubtitle:
+      "GridBox, ALT-MBS and the Infinium hardware family — running across privatised distribution operators, OIZs, public-sector campuses and international deployments.",
+    historyEyebrow: "Track record",
+    historyTitleA: "From the privatisation era",
+    historyTitleHighlight: "to the conglomerate.",
+    historySubtitle:
+      "Fifteen years engineering the data, software and physical infrastructure of the Turkish energy sector — and now beyond.",
+    ctaTitle: "Build with Infinium.",
+    ctaBody:
+      "Distribution operators, industrial groups, OIZs and public-sector campuses partner with Infinium Group to deploy unified infrastructure — measurable, integrated, supported.",
+  },
+  partnerStrip: {
+    title: "Ecosystem partners",
+    viewAll: "View all →",
+  },
+  footer: {
+    description:
+      "Infinium Group — the conglomerate uniting GridBox, ALT-MBS and a partner ecosystem of specialist companies in hardware, software, energy markets, AI, sustainability and power electronics.",
+    tagline: "Engineering the Infrastructure of Tomorrow",
+    company: "Company",
+    units: "Business Units",
+    partners: "Partners",
+    aboutHistory: "About & History",
+    missionVision: "Mission & Vision",
+    rights: "All rights reserved.",
+  },
+  contact: {
+    eyebrow: "Contact",
+    titleA: "Let's build the",
+    titleHighlight: "next system.",
+    subtitle:
+      "Distribution operators, OIZs, public-sector buyers and international utilities — reach out for partnership, deployment or media enquiries.",
+    email: "Email",
+    headquarters: "Headquarters",
+    commercial: "Commercial",
+    commercialBody: "RFPs, distribution-operator pilots, OIZ and campus deployments.",
+    partnerships: "Partnerships",
+    partnershipsBody:
+      "International channel, asset-management and ESG platform partnerships.",
+    viewOnMap: "View on map",
+  },
+  language: {
+    label: "Language",
+    en: "English",
+    tr: "Türkçe",
+  },
+};
+
+export type Translation = typeof en;
+export default en;
