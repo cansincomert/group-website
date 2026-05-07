@@ -67,6 +67,16 @@ const en = {
     historyTitleHighlight: "to the conglomerate.",
     historySubtitle:
       "Fifteen years engineering the data, software and physical infrastructure of the Turkish energy sector — and now beyond.",
+    videoEyebrow: "Introduction",
+    videoTitleA: "A 60-second look",
+    videoTitleHighlight: "at Infinium Group.",
+    videoSubtitle:
+      "From smart-meter silicon to head-end software, EPİAŞ market operations and ESG reporting — the platform in motion.",
+    videoPlay: "Play introduction",
+    videoPause: "Pause",
+    videoPlaceholderTag: "Coming soon",
+    videoPlaceholderBody:
+      "The introduction film will appear here once /videos/intro.mp4 is published.",
     ctaTitle: "Build with Infinium.",
     ctaBody:
       "Distribution operators, industrial groups, OIZs and public-sector campuses partner with Infinium Group to deploy unified infrastructure — measurable, integrated, supported.",

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
+import { IntroVideo } from "@/components/site/IntroVideo";
 import { SectionHeader, Eyebrow } from "@/components/site/SectionHeader";
 import { solutions } from "@/data/solutions";
 import { products } from "@/data/products";
@@ -101,6 +102,8 @@ const Home = () => {
       </section>
 
       <PartnerMarquee />
+
+      <IntroVideo />
 
       {/* STATS */}
       <section className="container py-16 md:py-20">

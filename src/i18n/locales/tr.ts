@@ -69,6 +69,16 @@ const tr: Translation = {
     historyTitleHighlight: "konglomeraya.",
     historySubtitle:
       "On beş yılı aşkın süredir Türkiye enerji sektörünün veri, yazılım ve fiziksel altyapısını mühendisliğini yapıyoruz — ve artık ötesine geçiyoruz.",
+    videoEyebrow: "Tanıtım",
+    videoTitleA: "Infinium Group'a",
+    videoTitleHighlight: "60 saniyelik bir bakış.",
+    videoSubtitle:
+      "Akıllı sayaç silikonundan head-end yazılımına, EPİAŞ piyasa operasyonlarından ESG raporlamasına — platform iş başında.",
+    videoPlay: "Tanıtımı oynat",
+    videoPause: "Duraklat",
+    videoPlaceholderTag: "Yakında",
+    videoPlaceholderBody:
+      "Tanıtım filmi /videos/intro.mp4 yayınlandığında burada görünecek.",
     ctaTitle: "Infinium ile inşa edin.",
     ctaBody:
       "Dağıtım operatörleri, sanayi grupları, OSB'ler ve kamu kampüsleri Infinium Group ile birleşik altyapı kurar — ölçülebilir, entegre, desteklenen.",
