@@ -1,13 +1,20 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, ArrowRight, Check, ExternalLink } from "lucide-react";
-import { findSolution, solutions } from "@/data/solutions";
 import { findPartner } from "@/data/partners";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import {
+  useLocalisedSolution,
+  useLocalisedSolutions,
+} from "@/i18n/content";
 
 const SolutionDetail = () => {
   const { slug } = useParams();
-  const solution = slug ? findSolution(slug) : undefined;
+  const { t } = useTranslation();
+  const solution = useLocalisedSolution(slug);
+  const solutions = useLocalisedSolutions();
+
   if (!solution) return <Navigate to="/solutions" replace />;
 
   const Icon = solution.icon;
@@ -29,7 +36,7 @@ const SolutionDetail = () => {
           to="/solutions"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
         >
-          <ArrowLeft className="h-3.5 w-3.5" /> All solutions
+          <ArrowLeft className="h-3.5 w-3.5" /> {t("common.backToSolutions")}
         </Link>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_360px]">
@@ -42,7 +49,7 @@ const SolutionDetail = () => {
             </p>
 
             <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Capabilities
+              {t("common.capabilities")}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {solution.capabilities.map((c) => (
@@ -57,7 +64,7 @@ const SolutionDetail = () => {
             </ul>
 
             <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Field outcomes
+              {t("common.fieldOutcomes")}
             </h3>
             <ul className="mt-4 space-y-2">
               {solution.outcomes.map((o) => (
@@ -74,11 +81,11 @@ const SolutionDetail = () => {
           <aside className="space-y-4">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Ecosystem partners
+                {t("common.ecosystemPartners")}
               </div>
               {linkedPartners.length === 0 ? (
                 <p className="mt-3 text-sm text-muted-foreground">
-                  Delivered in-house by Infinium Group.
+                  {t("common.inHouse")}
                 </p>
               ) : (
                 <ul className="mt-3 space-y-2">
@@ -107,7 +114,7 @@ const SolutionDetail = () => {
                         )}
                       </div>
                       <div className="mt-0.5 text-xs text-muted-foreground">
-                        {p!.role}
+                        {t(`partnerData.${p!.slug}.role`, { defaultValue: p!.role })}
                       </div>
                     </li>
                   ))}
@@ -116,10 +123,10 @@ const SolutionDetail = () => {
             </div>
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Engage
+                {t("common.engage")}
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                Discuss a deployment, pilot or RFP with the {solution.short} team.
+                {t("common.discussDeployment", { name: solution.short })}
               </p>
               <Button
                 asChild
@@ -127,7 +134,7 @@ const SolutionDetail = () => {
                 className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <Link to="/contact">
-                  Contact team{" "}
+                  {t("common.contactUnit")}{" "}
                   <ArrowRight className="ml-1 h-3.5 w-3.5" />
                 </Link>
               </Button>
@@ -136,7 +143,9 @@ const SolutionDetail = () => {
         </div>
 
         <div className="mt-20 flex items-center justify-between border-t border-border pt-8">
-          <span className="text-sm text-muted-foreground">Next solution</span>
+          <span className="text-sm text-muted-foreground">
+            {t("common.nextUnit")}
+          </span>
           <Link
             to={`/solutions/${next.slug}`}
             className="group inline-flex items-center gap-2 font-display text-lg font-semibold hover:text-primary"
