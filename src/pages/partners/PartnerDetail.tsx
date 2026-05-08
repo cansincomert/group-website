@@ -1,16 +1,24 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, ArrowRight, Check, ExternalLink, MapPin } from "lucide-react";
-import { findPartner, partners } from "@/data/partners";
-import { findSolution } from "@/data/solutions";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import {
+  useLocalisedPartner,
+  useLocalisedPartners,
+  useLocalisedSolutions,
+} from "@/i18n/content";
 
 const PartnerDetail = () => {
   const { slug } = useParams();
-  const partner = slug ? findPartner(slug) : undefined;
+  const { t } = useTranslation();
+  const partner = useLocalisedPartner(slug);
+  const partners = useLocalisedPartners();
+  const solutions = useLocalisedSolutions();
+
   if (!partner) return <Navigate to="/partners" replace />;
 
-  const solution = findSolution(partner.solutionSlug);
+  const solution = solutions.find((s) => s.slug === partner.solutionSlug);
   const idx = partners.findIndex((p) => p.slug === partner.slug);
   const next = partners[(idx + 1) % partners.length];
 
@@ -26,7 +34,7 @@ const PartnerDetail = () => {
           to="/partners"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
         >
-          <ArrowLeft className="h-3.5 w-3.5" /> All partners
+          <ArrowLeft className="h-3.5 w-3.5" /> {t("common.backToPartners")}
         </Link>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_360px]">
@@ -36,7 +44,7 @@ const PartnerDetail = () => {
             </p>
 
             <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              What they bring
+              {t("common.whatTheyBring")}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {partner.highlights.map((h) => (
@@ -54,28 +62,34 @@ const PartnerDetail = () => {
           <aside className="space-y-4">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Profile
+                {t("common.profile")}
               </div>
               <dl className="mt-3 space-y-3 text-sm">
                 {partner.legalName && (
                   <div>
-                    <dt className="text-muted-foreground">Legal entity</dt>
+                    <dt className="text-muted-foreground">
+                      {t("common.legalEntity")}
+                    </dt>
                     <dd className="font-medium">{partner.legalName}</dd>
                   </div>
                 )}
                 <div>
-                  <dt className="text-muted-foreground">Headquarters</dt>
+                  <dt className="text-muted-foreground">
+                    {t("common.headquarters")}
+                  </dt>
                   <dd className="font-medium inline-flex items-center gap-1">
                     <MapPin className="h-3.5 w-3.5" /> {partner.hq}
                   </dd>
                 </div>
                 <div>
-                  <dt className="text-muted-foreground">Domain</dt>
+                  <dt className="text-muted-foreground">{t("common.domain")}</dt>
                   <dd className="font-medium">{partner.domain}</dd>
                 </div>
                 {partner.url && (
                   <div>
-                    <dt className="text-muted-foreground">Website</dt>
+                    <dt className="text-muted-foreground">
+                      {t("common.website")}
+                    </dt>
                     <dd>
                       <a
                         href={partner.url}
@@ -83,7 +97,9 @@ const PartnerDetail = () => {
                         rel="noreferrer"
                         className="inline-flex items-center gap-1 font-medium text-primary hover:underline"
                       >
-                        {partner.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                        {partner.url
+                          .replace(/^https?:\/\//, "")
+                          .replace(/\/$/, "")}
                         <ExternalLink className="h-3.5 w-3.5" />
                       </a>
                     </dd>
@@ -95,7 +111,7 @@ const PartnerDetail = () => {
             {solution && (
               <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
                 <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Linked solution
+                  {t("common.linkedSolution")}
                 </div>
                 <div className="mt-3 font-display text-base font-semibold">
                   {solution.name}
@@ -110,7 +126,7 @@ const PartnerDetail = () => {
                   className="mt-4 border-border"
                 >
                   <Link to={`/solutions/${solution.slug}`}>
-                    Open solution{" "}
+                    {t("common.openSolution")}{" "}
                     <ArrowRight className="ml-1 h-3.5 w-3.5" />
                   </Link>
                 </Button>
@@ -120,7 +136,9 @@ const PartnerDetail = () => {
         </div>
 
         <div className="mt-20 flex items-center justify-between border-t border-border pt-8">
-          <span className="text-sm text-muted-foreground">Next partner</span>
+          <span className="text-sm text-muted-foreground">
+            {t("common.nextPartner")}
+          </span>
           <Link
             to={`/partners/${next.slug}`}
             className="group inline-flex items-center gap-2 font-display text-lg font-semibold hover:text-primary"

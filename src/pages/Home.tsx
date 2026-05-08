@@ -14,10 +14,12 @@ import { Button } from "@/components/ui/button";
 import { PartnerMarquee } from "@/components/site/PartnerMarquee";
 import { IntroVideo } from "@/components/site/IntroVideo";
 import { SectionHeader, Eyebrow } from "@/components/site/SectionHeader";
-import { solutions } from "@/data/solutions";
-import { products } from "@/data/products";
-import { milestones } from "@/data/history";
-import { headlineStats } from "@/data/clients";
+import {
+  useLocalisedHeadlineStats,
+  useLocalisedMilestones,
+  useLocalisedProducts,
+  useLocalisedSolutions,
+} from "@/i18n/content";
 import hero from "@/assets/hero.jpg";
 
 const pillars = [
@@ -31,6 +33,10 @@ const pillars = [
 
 const Home = () => {
   const { t } = useTranslation();
+  const headlineStats = useLocalisedHeadlineStats();
+  const localisedMilestones = useLocalisedMilestones();
+  const solutions = useLocalisedSolutions();
+  const products = useLocalisedProducts();
 
   return (
     <>
@@ -189,7 +195,7 @@ const Home = () => {
                   </div>
                   {p.since && (
                     <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-muted-foreground">
-                      {p.since}
+                      {t("common.since")} {p.since}
                     </span>
                   )}
                 </div>
@@ -222,7 +228,7 @@ const Home = () => {
           subtitle={t("home.historySubtitle")}
         />
         <ol className="relative mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-3">
-          {milestones.map((m) => (
+          {localisedMilestones.map((m) => (
             <li
               key={m.year}
               className="rounded-2xl border border-border bg-card p-6 shadow-card"

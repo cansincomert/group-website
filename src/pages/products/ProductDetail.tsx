@@ -1,12 +1,19 @@
 import { Link, Navigate, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
-import { findProduct, products } from "@/data/products";
 import { PageHero } from "@/components/site/PageHero";
 import { Button } from "@/components/ui/button";
+import {
+  useLocalisedProduct,
+  useLocalisedProducts,
+} from "@/i18n/content";
 
 const ProductDetail = () => {
   const { slug } = useParams();
-  const product = slug ? findProduct(slug) : undefined;
+  const { t } = useTranslation();
+  const product = useLocalisedProduct(slug);
+  const products = useLocalisedProducts();
+
   if (!product) return <Navigate to="/products" replace />;
 
   const Icon = product.icon;
@@ -25,7 +32,7 @@ const ProductDetail = () => {
           to="/products"
           className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
         >
-          <ArrowLeft className="h-3.5 w-3.5" /> All products
+          <ArrowLeft className="h-3.5 w-3.5" /> {t("common.backToProducts")}
         </Link>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_360px]">
@@ -38,7 +45,7 @@ const ProductDetail = () => {
             </p>
 
             <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Capabilities
+              {t("common.capabilities")}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {product.features.map((c) => (
@@ -56,16 +63,18 @@ const ProductDetail = () => {
           <aside className="space-y-4">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Profile
+                {t("common.profile")}
               </div>
               <dl className="mt-3 space-y-3 text-sm">
                 <div>
-                  <dt className="text-muted-foreground">Family</dt>
+                  <dt className="text-muted-foreground">{t("common.family")}</dt>
                   <dd className="font-medium">{product.family}</dd>
                 </div>
                 {product.since && (
                   <div>
-                    <dt className="text-muted-foreground">In production since</dt>
+                    <dt className="text-muted-foreground">
+                      {t("common.inProductionSince")}
+                    </dt>
                     <dd className="font-medium">{product.since}</dd>
                   </div>
                 )}
@@ -73,10 +82,10 @@ const ProductDetail = () => {
             </div>
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Engage
+                {t("common.engage")}
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
-                Speak to the {product.name} team about a deployment, RFP or pilot.
+                {t("common.productEngageBody", { name: product.name })}
               </p>
               <Button
                 asChild
@@ -84,7 +93,8 @@ const ProductDetail = () => {
                 className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90"
               >
                 <Link to="/contact">
-                  Talk to us <ArrowRight className="ml-1 h-3.5 w-3.5" />
+                  {t("common.talkToUs")}{" "}
+                  <ArrowRight className="ml-1 h-3.5 w-3.5" />
                 </Link>
               </Button>
             </div>
@@ -92,7 +102,9 @@ const ProductDetail = () => {
         </div>
 
         <div className="mt-20 flex items-center justify-between border-t border-border pt-8">
-          <span className="text-sm text-muted-foreground">Next product</span>
+          <span className="text-sm text-muted-foreground">
+            {t("common.nextProduct")}
+          </span>
           <Link
             to={`/products/${next.slug}`}
             className="group inline-flex items-center gap-2 font-display text-lg font-semibold hover:text-primary"
