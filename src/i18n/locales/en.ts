@@ -41,6 +41,10 @@ const en = {
       "Discuss a deployment, pilot or RFP with the {{name}} team.",
     productEngageBody:
       "Speak to the {{name}} team about a deployment, RFP or pilot.",
+    visitWebsite: "Visit {{name}} website",
+    homeAria: "Home",
+    siteLogo: "Site logo",
+    toggleMenu: "Toggle menu",
   },
   home: {
     eyebrow: "Infinium Group · A Turkish technology holding",
@@ -448,6 +452,7 @@ const en = {
   },
   partnerData: {
     kuantek: {
+      hq: "Gebze, Kocaeli",
       role: "FPGA & Embedded Electronics",
       domain: "Hardware",
       description:
@@ -459,6 +464,7 @@ const en = {
       ],
     },
     intheca: {
+      hq: "Türkiye",
       role: "Electronics & Embedded Software",
       domain: "Hardware",
       description:
@@ -466,6 +472,7 @@ const en = {
       highlights: ["Embedded firmware", "Industrial electronics", "IoT field devices"],
     },
     hayen: {
+      hq: "Üsküdar, Istanbul",
       role: "Head-end Software & IoT Data",
       domain: "Software",
       description:
@@ -477,6 +484,7 @@ const en = {
       ],
     },
     utiligize: {
+      hq: "Copenhagen, Denmark",
       role: "Asset Management for Utilities",
       domain: "Software",
       description:
@@ -488,6 +496,7 @@ const en = {
       ],
     },
     upu: {
+      hq: "Türkiye",
       role: "Operational Monitoring & IoT 4.0",
       domain: "Monitoring",
       description:
@@ -499,6 +508,7 @@ const en = {
       ],
     },
     ant: {
+      hq: "Türkiye",
       role: "Electricity Supply & Market Ops",
       domain: "Energy",
       description:
@@ -510,6 +520,7 @@ const en = {
       ],
     },
     goktekin: {
+      hq: "Türkiye",
       role: "Renewable EPC",
       domain: "Renewables",
       description:
@@ -521,6 +532,7 @@ const en = {
       ],
     },
     inrag: {
+      hq: "Türkiye",
       role: "Hydrogen R&D",
       domain: "Renewables",
       description:
@@ -532,6 +544,7 @@ const en = {
       ],
     },
     cozeka: {
+      hq: "Türkiye",
       role: "AI Development & Analytics",
       domain: "AI",
       description:
@@ -543,6 +556,7 @@ const en = {
       ],
     },
     sophgo: {
+      hq: "China",
       role: "AI Compute Silicon",
       domain: "AI",
       description:
@@ -554,6 +568,7 @@ const en = {
       ],
     },
     cleture: {
+      hq: "Türkiye",
       role: "ESG, CO₂ & Water Reporting",
       domain: "Sustainability",
       description:
@@ -565,6 +580,7 @@ const en = {
       ],
     },
     enel: {
+      hq: "Istanbul, Türkiye",
       role: "UPS & Power Electronics",
       domain: "Power Electronics",
       description:

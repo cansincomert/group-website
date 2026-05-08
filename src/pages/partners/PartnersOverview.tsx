@@ -53,7 +53,7 @@ const PartnersOverview = () => {
                       target="_blank"
                       rel="noreferrer"
                       className="rounded-md border border-border p-2 text-muted-foreground hover:border-primary/40 hover:text-primary"
-                      aria-label={`Visit ${p.name} website`}
+                      aria-label={t("common.visitWebsite", { name: p.name })}
                     >
                       <ExternalLink className="h-4 w-4" />
                     </a>

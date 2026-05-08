@@ -59,6 +59,7 @@ export const useLocalisedPartners = (): LocalisedPartner[] => {
   const { t } = useTranslation();
   return rawPartners.map((p) => ({
     ...p,
+    hq: stringFallback(t(`partnerData.${p.slug}.hq`, { defaultValue: p.hq }), p.hq),
     role: stringFallback(t(`partnerData.${p.slug}.role`, { defaultValue: p.role }), p.role),
     domain: stringFallback(t(`partnerData.${p.slug}.domain`, { defaultValue: p.domain }), p.domain),
     description: stringFallback(
