@@ -25,7 +25,7 @@ export const LanguageSwitcher = ({
   return (
     <div
       role="group"
-      aria-label="Language"
+      aria-label={i18n.t("language.label")}
       className={`inline-flex items-center gap-1 rounded-md border border-white/20 bg-white/5 px-1 py-0.5 text-xs ${className}`}
     >
       <Globe className="ml-1 h-3.5 w-3.5 text-slate-300" aria-hidden />

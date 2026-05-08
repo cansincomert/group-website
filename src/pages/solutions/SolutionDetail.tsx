@@ -107,7 +107,7 @@ const SolutionDetail = () => {
                             target="_blank"
                             rel="noreferrer"
                             className="text-muted-foreground hover:text-primary"
-                            aria-label={`Visit ${p!.name}`}
+                            aria-label={t("common.visitWebsite", { name: p!.name })}
                           >
                             <ExternalLink className="h-3.5 w-3.5" />
                           </a>

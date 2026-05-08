@@ -43,6 +43,10 @@ const tr: Translation = {
       "{{name}} ekibiyle kurulum, pilot veya RFP görüşmesi yapın.",
     productEngageBody:
       "{{name}} ekibiyle kurulum, RFP veya pilot için iletişime geçin.",
+    visitWebsite: "{{name}} web sitesini ziyaret et",
+    homeAria: "Ana Sayfa",
+    siteLogo: "Site logosu",
+    toggleMenu: "Menüyü aç/kapat",
   },
   home: {
     eyebrow: "Infinium Group · Türkiye merkezli teknoloji holdingi",
@@ -449,6 +453,7 @@ const tr: Translation = {
   },
   partnerData: {
     kuantek: {
+      hq: "Gebze, Kocaeli",
       role: "FPGA & Gömülü Elektronik",
       domain: "Donanım",
       description:
@@ -460,6 +465,7 @@ const tr: Translation = {
       ],
     },
     intheca: {
+      hq: "Türkiye",
       role: "Elektronik & Gömülü Yazılım",
       domain: "Donanım",
       description:
@@ -467,6 +473,7 @@ const tr: Translation = {
       highlights: ["Gömülü firmware", "Endüstriyel elektronik", "IoT saha cihazları"],
     },
     hayen: {
+      hq: "Üsküdar, İstanbul",
       role: "Head-end Yazılımı & IoT Verisi",
       domain: "Yazılım",
       description:
@@ -478,6 +485,7 @@ const tr: Translation = {
       ],
     },
     utiligize: {
+      hq: "Kopenhag, Danimarka",
       role: "Şebekeler için Varlık Yönetimi",
       domain: "Yazılım",
       description:
@@ -489,6 +497,7 @@ const tr: Translation = {
       ],
     },
     upu: {
+      hq: "Türkiye",
       role: "Operasyonel İzleme & IoT 4.0",
       domain: "İzleme",
       description:
@@ -500,6 +509,7 @@ const tr: Translation = {
       ],
     },
     ant: {
+      hq: "Türkiye",
       role: "Elektrik Tedariki & Piyasa Operasyonu",
       domain: "Enerji",
       description:
@@ -511,6 +521,7 @@ const tr: Translation = {
       ],
     },
     goktekin: {
+      hq: "Türkiye",
       role: "Yenilenebilir EPC",
       domain: "Yenilenebilir",
       description:
@@ -522,6 +533,7 @@ const tr: Translation = {
       ],
     },
     inrag: {
+      hq: "Türkiye",
       role: "Hidrojen Ar-Ge",
       domain: "Yenilenebilir",
       description:
@@ -533,6 +545,7 @@ const tr: Translation = {
       ],
     },
     cozeka: {
+      hq: "Türkiye",
       role: "Yapay Zekâ Geliştirme & Analitik",
       domain: "Yapay Zekâ",
       description:
@@ -544,6 +557,7 @@ const tr: Translation = {
       ],
     },
     sophgo: {
+      hq: "Çin",
       role: "Yapay Zekâ Hesaplama Silikonu",
       domain: "Yapay Zekâ",
       description:
@@ -555,6 +569,7 @@ const tr: Translation = {
       ],
     },
     cleture: {
+      hq: "Türkiye",
       role: "ESG, CO₂ & Su Raporlama",
       domain: "Sürdürülebilirlik",
       description:
@@ -566,6 +581,7 @@ const tr: Translation = {
       ],
     },
     enel: {
+      hq: "İstanbul, Türkiye",
       role: "UPS & Güç Elektroniği",
       domain: "Güç Elektroniği",
       description:
