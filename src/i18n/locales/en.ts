@@ -120,6 +120,11 @@ const en = {
     partnershipsBody:
       "International channel, asset-management and ESG platform partnerships.",
     viewOnMap: "View on map",
+    address: "Address",
+    addressLine1: "Maslak, Eski Büyükdere Cd. No:1 İç Kapı No:59",
+    addressLine2: "Kat:19, 34485 Sarıyer / İstanbul",
+    openInMaps: "Open in Google Maps",
+    mapEmbedTitle: "Infinium Group headquarters on Google Maps",
   },
   about: {
     eyebrow: "About Infinium Group",
