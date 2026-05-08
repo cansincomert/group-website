@@ -118,6 +118,11 @@ const tr: Translation = {
     partnershipsBody:
       "Uluslararası kanal, varlık yönetimi ve ESG platformu partnerlikleri.",
     viewOnMap: "Haritada göster",
+    address: "Adres",
+    addressLine1: "Maslak, Eski Büyükdere Cd. No:1 İç Kapı No:59",
+    addressLine2: "Kat:19, 34485 Sarıyer / İstanbul",
+    openInMaps: "Google Maps'te aç",
+    mapEmbedTitle: "Infinium Group genel merkezi Google Haritalar üzerinde",
   },
   about: {
     eyebrow: "Infinium Group Hakkında",
