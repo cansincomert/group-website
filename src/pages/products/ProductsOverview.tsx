@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowRight } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { useLocalisedProducts } from "@/i18n/content";
+import { uc } from "@/lib/text";
 
 const ProductsOverview = () => {
   const { t } = useTranslation();
@@ -34,13 +35,13 @@ const ProductsOverview = () => {
                   <p.icon className="h-5 w-5" />
                 </div>
                 {p.since && (
-                  <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-muted-foreground">
-                    {t("common.since")} {p.since}
+                  <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] tracking-widest text-muted-foreground">
+                    {uc(t("common.since"))} {p.since}
                   </span>
                 )}
               </div>
-              <div className="mt-5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                {p.family}
+              <div className="mt-5 text-[11px] tracking-[0.22em] text-muted-foreground">
+                {uc(p.family)}
               </div>
               <div className="mt-1 font-display text-xl font-semibold">{p.name}</div>
               <p className="mt-2 text-sm text-muted-foreground">{p.tagline}</p>

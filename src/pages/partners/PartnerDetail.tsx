@@ -8,6 +8,7 @@ import {
   useLocalisedPartners,
   useLocalisedSolutions,
 } from "@/i18n/content";
+import { uc } from "@/lib/text";
 
 const PartnerDetail = () => {
   const { slug } = useParams();
@@ -43,8 +44,8 @@ const PartnerDetail = () => {
               {partner.description}
             </p>
 
-            <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              {t("common.whatTheyBring")}
+            <h3 className="mt-12 text-xs tracking-[0.22em] text-muted-foreground">
+              {uc(t("common.whatTheyBring"))}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {partner.highlights.map((h) => (
@@ -61,8 +62,8 @@ const PartnerDetail = () => {
 
           <aside className="space-y-4">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("common.profile")}
+              <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("common.profile"))}
               </div>
               <dl className="mt-3 space-y-3 text-sm">
                 {partner.legalName && (
@@ -110,8 +111,8 @@ const PartnerDetail = () => {
 
             {solution && (
               <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-                <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  {t("common.linkedSolution")}
+                <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                  {uc(t("common.linkedSolution"))}
                 </div>
                 <div className="mt-3 font-display text-base font-semibold">
                   {solution.name}

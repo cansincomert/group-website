@@ -8,6 +8,7 @@ import {
   useLocalisedSolution,
   useLocalisedSolutions,
 } from "@/i18n/content";
+import { uc } from "@/lib/text";
 
 const SolutionDetail = () => {
   const { slug } = useParams();
@@ -48,8 +49,8 @@ const SolutionDetail = () => {
               {solution.description}
             </p>
 
-            <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              {t("common.capabilities")}
+            <h3 className="mt-12 text-xs tracking-[0.22em] text-muted-foreground">
+              {uc(t("common.capabilities"))}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {solution.capabilities.map((c) => (
@@ -63,8 +64,8 @@ const SolutionDetail = () => {
               ))}
             </ul>
 
-            <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              {t("common.fieldOutcomes")}
+            <h3 className="mt-12 text-xs tracking-[0.22em] text-muted-foreground">
+              {uc(t("common.fieldOutcomes"))}
             </h3>
             <ul className="mt-4 space-y-2">
               {solution.outcomes.map((o) => (
@@ -80,8 +81,8 @@ const SolutionDetail = () => {
 
           <aside className="space-y-4">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("common.ecosystemPartners")}
+              <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("common.ecosystemPartners"))}
               </div>
               {linkedPartners.length === 0 ? (
                 <p className="mt-3 text-sm text-muted-foreground">
@@ -122,8 +123,8 @@ const SolutionDetail = () => {
               )}
             </div>
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("common.engage")}
+              <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("common.engage"))}
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
                 {t("common.discussDeployment", { name: solution.short })}

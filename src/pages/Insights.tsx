@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { PageHero } from "@/components/site/PageHero";
 import { ArrowUpRight } from "lucide-react";
+import { uc } from "@/lib/text";
 
 const postKeys = [
   "groupFormed",
@@ -34,11 +35,11 @@ const Insights = () => {
               key={k}
               className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-card transition-all hover:-translate-y-0.5 hover:border-primary/40"
             >
-              <div className="flex items-center gap-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              <div className="flex items-center gap-3 text-xs tracking-[0.18em] text-muted-foreground">
                 <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-primary">
-                  {t(`insights.posts.${k}.tag`)}
+                  {uc(t(`insights.posts.${k}.tag`))}
                 </span>
-                <span>{t(`insights.posts.${k}.date`)}</span>
+                <span>{uc(t(`insights.posts.${k}.date`))}</span>
               </div>
               <h3 className="mt-4 text-xl font-semibold leading-snug">
                 {t(`insights.posts.${k}.title`)}

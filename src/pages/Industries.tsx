@@ -10,6 +10,7 @@ import {
   Globe2,
 } from "lucide-react";
 import { useLocalisedClientGroups } from "@/i18n/content";
+import { uc } from "@/lib/text";
 
 const list = [
   { key: "distribution", icon: Zap },
@@ -77,8 +78,8 @@ const Industries = () => {
                 key={g.title}
                 className="rounded-2xl border border-border bg-background/60 p-7 shadow-card"
               >
-                <div className="text-[11px] uppercase tracking-[0.22em] text-primary">
-                  {g.title}
+                <div className="text-[11px] tracking-[0.22em] text-primary">
+                  {uc(g.title)}
                 </div>
                 {g.subtitle && (
                   <div className="mt-1 text-xs text-muted-foreground">

@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { ArrowRight, ExternalLink, MapPin } from "lucide-react";
 import { PageHero } from "@/components/site/PageHero";
 import { useLocalisedPartners, useLocalisedSolutions } from "@/i18n/content";
+import { uc } from "@/lib/text";
 
 const PartnersOverview = () => {
   const { t } = useTranslation();
@@ -35,8 +36,8 @@ const PartnersOverview = () => {
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <div className="text-[11px] uppercase tracking-[0.22em] text-primary">
-                      {p.domain}
+                    <div className="text-[11px] tracking-[0.22em] text-primary">
+                      {uc(p.domain)}
                     </div>
                     <h3 className="mt-1 font-display text-2xl font-semibold leading-tight">
                       {p.name}

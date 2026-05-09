@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Play, Pause } from "lucide-react";
 import { SectionHeader } from "./SectionHeader";
+import { uc } from "@/lib/text";
 
 const POSTER_SRC = "/videos/intro-poster.jpg";
 const MP4_SRC = "/videos/intro.mp4";
@@ -83,8 +84,8 @@ export const IntroVideo = () => {
 
           {unavailable && (
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#020a26] to-transparent px-6 py-5">
-              <div className="text-xs uppercase tracking-[0.22em] text-primary">
-                {t("home.videoPlaceholderTag")}
+              <div className="text-xs tracking-[0.22em] text-primary">
+                {uc(t("home.videoPlaceholderTag"))}
               </div>
               <div className="mt-1 text-sm text-slate-200">
                 {t("home.videoPlaceholderBody")}
