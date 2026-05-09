@@ -7,6 +7,7 @@ import {
   useLocalisedProduct,
   useLocalisedProducts,
 } from "@/i18n/content";
+import { uc } from "@/lib/text";
 
 const ProductDetail = () => {
   const { slug } = useParams();
@@ -44,8 +45,8 @@ const ProductDetail = () => {
               {product.description}
             </p>
 
-            <h3 className="mt-12 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              {t("common.capabilities")}
+            <h3 className="mt-12 text-xs tracking-[0.22em] text-muted-foreground">
+              {uc(t("common.capabilities"))}
             </h3>
             <ul className="mt-4 grid gap-2 sm:grid-cols-2">
               {product.features.map((c) => (
@@ -62,8 +63,8 @@ const ProductDetail = () => {
 
           <aside className="space-y-4">
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("common.profile")}
+              <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("common.profile"))}
               </div>
               <dl className="mt-3 space-y-3 text-sm">
                 <div>
@@ -81,8 +82,8 @@ const ProductDetail = () => {
               </dl>
             </div>
             <div className="rounded-2xl border border-border bg-card p-6 shadow-card">
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("common.engage")}
+              <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("common.engage"))}
               </div>
               <p className="mt-3 text-sm text-muted-foreground">
                 {t("common.productEngageBody", { name: product.name })}

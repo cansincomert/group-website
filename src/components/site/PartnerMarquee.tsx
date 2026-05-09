@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { partners } from "@/data/partners";
+import { uc } from "@/lib/text";
 
 const LogoTile = ({
   slug,
@@ -40,14 +41,14 @@ export const PartnerMarquee = () => {
       className="border-y border-white/10 bg-[#020a26] py-10"
     >
       <div className="container mb-6 flex items-center justify-between">
-        <div className="text-xs uppercase tracking-[0.22em] text-slate-400">
-          {t("partnerStrip.title")}
+        <div className="text-xs tracking-[0.22em] text-slate-400">
+          {uc(t("partnerStrip.title"))}
         </div>
         <Link
           to="/partners"
-          className="text-xs uppercase tracking-[0.18em] text-slate-400 hover:text-primary"
+          className="text-xs tracking-[0.18em] text-slate-400 hover:text-primary"
         >
-          {t("partnerStrip.viewAll")}
+          {uc(t("partnerStrip.viewAll"))}
         </Link>
       </div>
 

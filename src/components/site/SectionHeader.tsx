@@ -1,7 +1,9 @@
+import { uc } from "@/lib/text";
+
 export const Eyebrow = ({ children }: { children: React.ReactNode }) => (
-  <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+  <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1 text-xs tracking-[0.18em] text-muted-foreground">
     <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" />
-    {children}
+    {typeof children === "string" ? uc(children) : children}
   </div>
 );
 

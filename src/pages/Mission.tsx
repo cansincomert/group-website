@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { PageHero } from "@/components/site/PageHero";
 import { Target, Telescope, Compass } from "lucide-react";
+import { uc } from "@/lib/text";
 
 const Mission = () => {
   const { t } = useTranslation();
@@ -29,8 +30,8 @@ const Mission = () => {
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
                 <Target className="h-5 w-5" />
               </div>
-              <div className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("mission.missionLabel")}
+              <div className="mt-5 text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("mission.missionLabel"))}
               </div>
               <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
                 {t("mission.missionTitle")}
@@ -43,8 +44,8 @@ const Mission = () => {
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary ring-1 ring-primary/20">
                 <Telescope className="h-5 w-5" />
               </div>
-              <div className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("mission.visionLabel")}
+              <div className="mt-5 text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("mission.visionLabel"))}
               </div>
               <h2 className="mt-3 text-3xl font-semibold leading-tight md:text-4xl">
                 {t("mission.visionTitle")}
@@ -59,8 +60,8 @@ const Mission = () => {
               <Compass className="h-5 w-5" />
             </div>
             <div>
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                {t("mission.principles.eyebrow")}
+              <div className="text-xs tracking-[0.22em] text-muted-foreground">
+                {uc(t("mission.principles.eyebrow"))}
               </div>
               <ul className="mt-5 grid gap-3 md:grid-cols-2">
                 {principleItems.map((p) => (

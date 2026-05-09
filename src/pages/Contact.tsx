@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { PageHero } from "@/components/site/PageHero";
 import { Mail, MapPin, Briefcase, Handshake, ExternalLink } from "lucide-react";
+import { uc } from "@/lib/text";
 
 const HQ_MAP_URL =
   "https://www.google.com/maps/place/Infinium+Group/@41.1047845,29.0244623,14.7z/data=!4m6!3m5!1s0x14cab5e46e6fa4f5:0xc49bf3ca2efe63a8!8m2!3d41.1080206!4d29.0141527!16s%2Fg%2F11yhdf2xpp";
@@ -36,8 +37,8 @@ const Contact = () => {
         <div className="grid gap-4 md:grid-cols-2">
           <div className="rounded-2xl border border-border bg-card p-8 shadow-card">
             <Mail className="h-5 w-5 text-primary" />
-            <div className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              {t("contact.email")}
+            <div className="mt-4 text-xs tracking-[0.2em] text-muted-foreground">
+              {uc(t("contact.email"))}
             </div>
             <a
               href="mailto:info@infinium.group"
@@ -54,8 +55,8 @@ const Contact = () => {
             className="group block rounded-2xl border border-border bg-card p-8 shadow-card transition-colors hover:border-primary/40"
           >
             <MapPin className="h-5 w-5 text-primary" />
-            <div className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              {t("contact.headquarters")}
+            <div className="mt-4 text-xs tracking-[0.2em] text-muted-foreground">
+              {uc(t("contact.headquarters"))}
             </div>
             <div className="mt-1 text-2xl font-semibold">
               Infinium Group
@@ -73,8 +74,8 @@ const Contact = () => {
 
           <div className="rounded-2xl border border-border bg-card p-8 shadow-card">
             <Briefcase className="h-5 w-5 text-primary" />
-            <div className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              {t("contact.commercial")}
+            <div className="mt-4 text-xs tracking-[0.2em] text-muted-foreground">
+              {uc(t("contact.commercial"))}
             </div>
             <div className="mt-1 text-base font-medium">
               {t("contact.commercialBody")}
@@ -89,8 +90,8 @@ const Contact = () => {
 
           <div className="rounded-2xl border border-border bg-card p-8 shadow-card">
             <Handshake className="h-5 w-5 text-primary" />
-            <div className="mt-4 text-xs uppercase tracking-[0.2em] text-muted-foreground">
-              {t("contact.partnerships")}
+            <div className="mt-4 text-xs tracking-[0.2em] text-muted-foreground">
+              {uc(t("contact.partnerships"))}
             </div>
             <div className="mt-1 text-base font-medium">
               {t("contact.partnershipsBody")}
@@ -108,8 +109,8 @@ const Contact = () => {
         <div className="mt-6 overflow-hidden rounded-2xl border border-border bg-card shadow-card">
           <div className="flex flex-col gap-3 border-b border-border p-6 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                {t("contact.address")}
+              <div className="text-xs tracking-[0.2em] text-muted-foreground">
+                {uc(t("contact.address"))}
               </div>
               <div className="mt-1 font-display text-lg font-semibold">
                 Infinium Group · Maslak, Sarıyer / İstanbul

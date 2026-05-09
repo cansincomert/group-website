@@ -4,8 +4,10 @@ import { useTranslation } from "react-i18next";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Logo } from "./Logo";
 import { LanguageSwitcher } from "./LanguageSwitcher";
-import { solutions } from "@/data/solutions";
-import { products } from "@/data/products";
+import {
+  useLocalisedProducts,
+  useLocalisedSolutions,
+} from "@/i18n/content";
 import { Button } from "@/components/ui/button";
 
 type NavItem = {
@@ -27,6 +29,8 @@ export const Header = () => {
   const [open, setOpen] = useState(false);
   const loc = useLocation();
   const { t } = useTranslation();
+  const solutions = useLocalisedSolutions();
+  const products = useLocalisedProducts();
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#011140]/95 backdrop-blur-xl">

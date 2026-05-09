@@ -16,10 +16,10 @@ import { IntroVideo } from "@/components/site/IntroVideo";
 import { SectionHeader, Eyebrow } from "@/components/site/SectionHeader";
 import {
   useLocalisedHeadlineStats,
-  useLocalisedMilestones,
   useLocalisedProducts,
   useLocalisedSolutions,
 } from "@/i18n/content";
+import { uc } from "@/lib/text";
 import hero from "@/assets/hero.jpg";
 
 const pillars = [
@@ -34,7 +34,6 @@ const pillars = [
 const Home = () => {
   const { t } = useTranslation();
   const headlineStats = useLocalisedHeadlineStats();
-  const localisedMilestones = useLocalisedMilestones();
   const solutions = useLocalisedSolutions();
   const products = useLocalisedProducts();
 
@@ -194,13 +193,13 @@ const Home = () => {
                     <p.icon className="h-5 w-5" />
                   </div>
                   {p.since && (
-                    <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] uppercase tracking-widest text-muted-foreground">
-                      {t("common.since")} {p.since}
+                    <span className="rounded-full border border-border bg-muted/40 px-2.5 py-0.5 text-[11px] tracking-widest text-muted-foreground">
+                      {uc(t("common.since"))} {p.since}
                     </span>
                   )}
                 </div>
-                <div className="mt-5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground">
-                  {p.family}
+                <div className="mt-5 text-[11px] tracking-[0.22em] text-muted-foreground">
+                  {uc(p.family)}
                 </div>
                 <div className="mt-1 font-display text-lg font-semibold">
                   {p.name}
@@ -211,38 +210,6 @@ const Home = () => {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* TIMELINE */}
-      <section className="container py-20 md:py-24">
-        <SectionHeader
-          eyebrow={t("home.historyEyebrow")}
-          title={
-            <>
-              {t("home.historyTitleA")}{" "}
-              <span className="text-gradient">
-                {t("home.historyTitleHighlight")}
-              </span>
-            </>
-          }
-          subtitle={t("home.historySubtitle")}
-        />
-        <ol className="relative mt-12 grid gap-4 md:grid-cols-3 lg:grid-cols-3">
-          {localisedMilestones.map((m) => (
-            <li
-              key={m.year}
-              className="rounded-2xl border border-border bg-card p-6 shadow-card"
-            >
-              <div className="font-display text-3xl font-semibold text-gradient">
-                {m.year}
-              </div>
-              <div className="mt-2 text-sm font-medium">{m.title}</div>
-              <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                {m.body}
-              </p>
-            </li>
-          ))}
-        </ol>
       </section>
 
       {/* CTA */}
